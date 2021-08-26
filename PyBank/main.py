@@ -24,8 +24,8 @@ import os
 import csv
 
 # Set path for file
-resource= os.path.join(os.path.expanduser("~"), "Documents/Assignments/Python-challenge/PyBank/Resources")
-csvpath = os.path.join(resource, "budget_data.csv")
+resource= os.path.dirname(__file__)
+csvpath = os.path.join(resource, "Resources/budget_data.csv")
 
 Total_Months = 0 
 Total = 0
@@ -68,8 +68,8 @@ with open(csvpath) as csvfile:
         Average_Change = round(AmtChange/(Total_Months-1),2)
 
 #print the analysis to the terminal and export a text file with the results
-Analysis= os.path.join(os.path.expanduser("~"), "Documents/Assignments/Python-challenge/PyBank/Analysis")
-outputpath = os.path.join(Analysis,"Results_budgetdata.txt")    
+Analysis= os.path.dirname(__file__)
+outputpath = os.path.join(Analysis,"Analysis/Results_budgetdata.txt")    
 results = open(outputpath, "w")
     
 #create the output

@@ -25,9 +25,12 @@
 import os
 import csv
 
-# Set path for file
-resource= os.path.join(os.path.expanduser("~"), "Documents/Assignments/Python-challenge/PyPoll/Resources")
-csvpath = os.path.join(resource, "election_data.csv")
+# Set path for local file
+#resource= os.path.join(os.path.expanduser("~"), "Documents/Assignments/Python-challenge/PyPoll/Resources")
+
+# Set path for generic file location
+resource = os.path.dirname(__file__)
+csvpath = os.path.join(resource, "Resources/election_data.csv")
 
 Total_Votes = 0
 CandidateList = []
@@ -55,8 +58,8 @@ with open(csvpath) as csvfile:
                 Vote_Count[indexofCandidate] = curVoteTally+1
 
 #print the analysis to the terminal and export a text file with the results
-Analysis= os.path.join(os.path.expanduser("~"), "Documents/Assignments/Python-challenge/PyPoll/Analysis")
-outputpath = os.path.join(Analysis,"Results_election_data.txt")    
+Analysis= os.path.dirname(__file__)
+outputpath = os.path.join(Analysis,"Analysis/Results_election_data.txt")    
 results = open(outputpath, "w")
 Winner_Votes = 0
 
