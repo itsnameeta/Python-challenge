@@ -71,7 +71,7 @@ for Candidate in CandidateList:
     if (Votes>Winner_Votes):
         Winner = Candidate
         Winner_Votes = Votes
-    Output.append(Candidate +": " + str(round(Votes_Percent,3))+"% " + " (" +str(Votes)+ ")" )
+    Output.append(Candidate +": " + str("{:.3f}".format(Votes_Percent))+"% " + " (" +str(Votes)+ ")" )
 Output.append("---------------------------")
 Output.append("Winner: " + Winner)
 Output.append("---------------------------")
